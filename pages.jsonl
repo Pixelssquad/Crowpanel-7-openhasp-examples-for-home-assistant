@@ -1,0 +1,116 @@
+{
+    "page": 1,
+    "id": 2,
+    "obj": "btn",
+    "x": 10,
+    "y": 265,
+    "w": 115,
+    "h": 40,
+    "toggle": true,
+    "text": "Loading",
+    "text_font": 16,
+    "align": 1
+}
+{
+   "page": 1,
+    "id": 3,
+    "obj": "btn",
+    "x": 10,
+    "y": 85,
+    "w": 115,
+    "h": 40,
+    "toggle": true,
+    "text": "Loading",
+    "text_font": 16,
+    "align": 1
+}
+{
+   "page": 1,
+    "id": 4,
+    "obj": "btn",
+    "x": 10,
+    "y": 130,
+    "w": 115,
+    "h": 40,
+    "toggle": true,
+    "text": "Loading",
+    "text_font": 16,
+    "align": 1
+}
+
+{
+   "page": 1,
+    "id": 20,
+    "obj": "btn",
+    "x": 10,
+    "y": 175,
+    "w": 115,
+    "h": 40,
+    "toggle": true,
+    "text": "Loading",
+    "text_font": 16,
+    "align": 1
+}
+
+{
+   "page": 1,
+    "id": 21,
+    "obj": "btn",
+    "x": 10,
+    "y": 220,
+    "w": 115,
+    "h": 40,
+    "toggle": true,
+    "text": "Loading",
+    "text_font": 16,
+    "align": 1
+}
+
+{
+   "page": 1,
+    "id": 22,
+    "obj": "btn",
+    "x": 10,
+    "y": 40,
+    "w": 115,
+    "h": 40,
+    "toggle": true,
+    "text": "Loading",
+    "text_font": 16,
+    "align": 1
+}
+
+
+
+{"page":1,"id":10,"obj":"obj","x":570,"y":40,"w":215,"h":210,"click":0}
+{"page":1,"id":11,"obj":"label","x":575,"y":85,"h":50,"w":165,"text":"CPM","align":3,"bg_color":"#FFFF00"}
+{"page":1,"id":12,"obj":"label","x":575,"y":125,"h":50,"w":165,"text":"CPM 5","align":3,"bg_color":"#FFFF00"}
+{"page":1,"id":13,"obj":"label","x":575,"y":165,"h":50,"w":165,"text":"CPM 15","align":3,"bg_color":"#FFFF00"}
+{"page":1,"id":14,"obj":"label","x":575,"y":205,"h":50,"w":165,"text":"µSv","align":3,"bg_color":"#FFFF00"}
+{"page":1,"id":15,"obj":"label","x":575,"y":41,"h":50,"w":199,"text":"     Radioactivity","align":1,"bg_color":"#000000","text_color": "#FFFF00"}
+{"page":1,"id":16,"obj":"img","x":535,"y":21,"src":"L:/nuclear.png","auto_size":1,"w":64,"h":64}  
+
+{"page":1,"id":5,"obj":"label","x":710,"y":85,"h":50,"w":65,"text":"00.0","align":2,"bg_color":"#2C3E50"}
+{"page":1,"id":6,"obj":"label","x":710,"y":125,"h":50,"w":65,"text":"00.0","align":2,"bg_color":"#2C3E50"}
+{"page":1,"id":7,"obj":"label","x":710,"y":165,"h":50,"w":65,"text":"00.0","align":2,"bg_color":"#2C3E50"}
+{"page":1,"id":8,"obj":"label","x":710,"y":205,"h":50,"w":65,"text":"00.0","align":2,"bg_color":"#2C3E50"}
+
+
+
+{"page":1,"id":31,"obj":"slider","x":162,"y":150,"w":44,"h":200,"min":1,"max":255}
+{"page":1,"id":32,"obj":"cpicker","x":132,"y":25,"w":100,"h":100}
+
+
+
+{"page":0,"id":1,"obj":"btn","action":{"down": "page prev"},"x":301,"y":448,"w":79,"h":32,"bg_color":"#2C3E50","text":"\uE141","text_color":"#FFFFFF","radius":0,"border_side":0,"text_font":24}
+{"page":0,"id":2,"obj":"btn","action":{"down": "page back"},"x":380,"y":448,"w":80,"h":32,"bg_color":"#2C3E50","text":"\uE2DC","text_color":"#FFFFFF","radius":0,"border_side":0,"text_font":24}
+{"page":0,"id":3,"obj":"btn","action":{"down": "page next"},"x":460,"y":448,"w":79,"h":32,"bg_color":"#2C3E50","text":"\uE142","text_color":"#FFFFFF","radius":0,"border_side":0,"text_font":24}
+
+
+
+
+
+
+
+
+

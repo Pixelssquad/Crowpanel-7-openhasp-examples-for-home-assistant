@@ -1,0 +1,145 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+
+openhasp:
+  crowpanel:
+    objects:
+      - obj: "p1b2" # switch, checkbox or btn with toggle true
+        properties:
+          "val": '{{ 1 if is_state("light.torcia_minecraft", "on") else 0 }}'
+          "text": '{{ "\uE6E8 Torcia" if is_state("light.torcia_minecraft", "on") else "\uE335 Torcia" | e }}'
+        event:
+          "down":
+            - service: homeassistant.toggle
+              entity_id: "light.torcia_minecraft"
+      
+      - obj: "p1b3" # switch, checkbox or btn with toggle true
+        properties:
+          "val": '{{ 1 if is_state("light.wledcielo", "on") else 0 }}'
+          "text": '{{ "\uE6E8 Cielo" if is_state("light.wledcielo", "on") else "\uE335 Cielo" | e }}'
+        event:
+          "down":
+            - service: homeassistant.toggle
+              entity_id: "light.wledcielo"        
+           
+      - obj: "p1b4" # switch, checkbox or btn with toggle true
+        properties:
+          "val": '{{ 1 if is_state("light.wled_scrivania", "on") else 0 }}'
+          "text": '{{ "\uE6E8 Desk" if is_state("light.wled_scrivania", "on") else "\uE335 Desk" | e }}'
+        event:
+          "down":
+            - service: homeassistant.toggle
+              entity_id: "light.wled_scrivania"     
+              
+      - obj: "p1b20" # switch, checkbox or btn with toggle true
+        properties:
+          "val": '{{ 1 if is_state("light.wled_arcreactor_main", "on") else 0 }}'
+          "text": '{{ "\uE6E8 ARC r." if is_state("light.wled_arcreactor_main", "on") else "\uE335 ARC r." | e }}'
+        event:
+          "down":
+            - service: homeassistant.toggle
+              entity_id: "light.wled_arcreactor_main"                
+              
+      - obj: "p1b21" # switch, checkbox or btn with toggle true
+        properties:
+          "val": '{{ 1 if is_state("light.flusso_canalizzatore_main", "on") else 0 }}'
+          "text": '{{ "\uE6E8 Flusso c." if is_state("light.flusso_canalizzatore_main", "on") else "\uE335 Flusso c." | e }}'
+        event:
+          "down":
+            - service: homeassistant.toggle
+              entity_id: "light.flusso_canalizzatore_main"               
+              
+              
+      - obj: "p1b22" # switch, checkbox or btn with toggle true
+        properties:
+          "val": '{{ 1 if is_state("switch.sole_interruttore_1", "on") else 0 }}'
+          "text": '{{ "\uE6E8 Sole" if is_state("switch.sole_interruttore_1", "on") else "\uE335 Sole" | e }}'
+        event:
+          "down":
+            - service: homeassistant.toggle
+              entity_id: "switch.sole_interruttore_1"               
+                           
+              
+              
+              
+              
+      - obj: "p1b5"
+        properties:
+          "text": "{{ states('sensor.espgeiger_6ab5c8_espgeiger_6ab5c8_cpm') }}"     
+      - obj: "p1b6"
+        properties:
+          "text": "{{ states('sensor.espgeiger_6ab5c8_espgeiger_6ab5c8_cpm5') }}"     
+      - obj: "p1b7"
+        properties:
+          "text": "{{ states('sensor.espgeiger_6ab5c8_espgeiger_6ab5c8_cpm15') }}"               
+      - obj: "p1b8"
+        properties:
+          "text": "{{ states('sensor.espgeiger_6ab5c8_espgeiger_6ab5c8_msv_h') }}"      
+          
+      - obj: "p1b31" # Light brightness
+        properties:
+          "val": "{{ state_attr('light.wledcielo', 'brightness') if state_attr('light.wledcielo', 'brightness') != None else 0 }}"
+        event:
+          "changed":
+            - service: light.turn_on
+              data:
+                entity_id: light.wledcielo
+                brightness:  "{{ val }}"
+          "up":
+            - service: light.turn_on
+              data:
+                entity_id: light.wledcielo
+                brightness: "{{ val }}"
+                
+      - obj: "p1b32" # Light color
+
+        event:
+          "up":
+            - service: light.turn_on
+              data:
+                entity_id: light.wledcielo
+                rgb_color: "[{{ r }},{{ g }},{{ b }}]"
+                
+                
+      - obj: "p2b108"
+        properties:
+          "text": "{{ states('sensor.tardis_outdoor_temperature') }}"               
+      - obj: "p2b103"
+        properties:
+          "text": "{{ states('sensor.tardis_indoor_temperature') }}"   
+      - obj: "p2b106"
+        properties:
+          "text": "{{ states('sensor.tardis_selected_temperature') }}"           
+      
+               
+      - obj: "p2b201"  # label current temp +
+        properties:
+          "text": +
+        event:
+          "up":
+            - service: hon.update_settings
+              target:
+                entity_id: climate.tardis
+              data:
+                temperature: 22
+      - obj: "p2b202"  # label current temp -
+        properties:
+          "text": "{{ state_attr('climate.tardis','sensor.tardis_selected_temperature') if not (is_state('climate.tardis','unavailable')) }}"
+        event:
+          "up":
+            - service: hon.update_settings
+              target:
+                entity_id: climate.tardis
+              data:
+                temperature: 23
+        
